@@ -1,0 +1,301 @@
+@import url('./vendor/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap');
+
+@font-face {
+    font-family: 'TTSupermolot';
+    src: url(../fonts/TT-Supermolot-Bold.woff) format('woff'),
+         url(../fonts/TT-Supermolot-Bold.otf) format('opentype');
+
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTSupermolot';
+    src: url(../fonts/TT-Supermolot-Regular.woff) format('woff'),
+         url(../fonts/TT\ Supermolot\ Regular.otf) format('opentype');
+
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.site-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 90px;
+    background-color: #85D4F4; 
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.header-container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.main-nav{
+    display: flex;
+    gap: 80px;
+}
+
+.social-links{
+    width: 160px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-nav{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    color: #201f53;
+}
+
+a.nav-link{
+    text-decoration: none;
+    color: #21206b;
+    transition: all 0.3s ease;
+}
+
+a.nav-link:hover{
+    color: #1b1b7f;
+    transform: scale(1.1);
+}
+
+.hero-container{
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}
+
+.hero-intro{
+    width: 60%;
+    height: auto;
+}
+
+.hero-image{
+    max-width: 40%;
+    height: auto;
+}
+
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 30px; 
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 80%;
+   
+}
+
+.hero-greeting{
+    font-family: TTSupermolot, sans-serif;
+    font-weight:700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #292929;
+}
+
+.hero-name{
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #292929;
+}
+
+.hero-description{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.container-content{
+    display: block;
+    height: auto;
+    align-items: center;
+    max-width: 700px; 
+    line-height: 1.6; 
+    text-align: justify;
+}
+
+.section-title{
+    font-family: TTSupermolot, sans-serif;
+    font-weight:400;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #292929;
+}
+
+.about-text{
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-indent: 50px;
+    text-align: justify;
+    color: #292929;
+}
+
+.container-content-2{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    height: auto;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.category-title{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000000;
+}
+
+.skills-category{
+    width: 400px;
+}
+
+.skill-item{
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    color: #292929;
+    margin-bottom: 6px;
+}
+
+.site-footer{
+    max-width: 100%;
+    height: 113px;
+    background-color: #85D4F4;
+    padding: 16px 269px 24px 269px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image{
+    width: 567px;
+    height: 292px;
+    float: right;
+}
+
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    width: 100%;
+    max-width: 1094px;
+    margin-top: 60px auto;
+}
+
+.projects-grid h2{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #292929;
+}
+
+.projects-grid h3{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #ED177D;
+}
+
+.projects-grid p{
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #292929;
+    text-align: justify;
+    margin-top: 12px;
+}
+
+.project-card {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.button{
+    width: 274px;
+    height: 44px;
+    background-color: #414ABA;
+    border-radius: 6px;
+    border-color: #414ABA;
+    margin: 8px 16px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.button_link{
+    font-family: TTSupermolot, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 2%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+}
