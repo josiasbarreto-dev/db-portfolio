@@ -312,11 +312,20 @@ a.nav-link:hover {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 220px;
+  display: block;
 }
 
 /* ================================
@@ -449,6 +458,14 @@ a.nav-link:hover {
   .skills-category {
     width: 100%;
   }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-greeting{
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -469,6 +486,7 @@ a.nav-link:hover {
   .hero-greeting,
   .hero-description {
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .section-title,
@@ -527,10 +545,15 @@ a.nav-link:hover {
 
   .projects-grid {
     gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .button {
     max-width: 260px;
+  }
+
+  .hero-greeting{
+    text-align: center;
   }
 }
 
