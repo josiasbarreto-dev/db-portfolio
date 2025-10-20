@@ -458,6 +458,14 @@ a.nav-link:hover {
   .skills-category {
     width: 100%;
   }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-greeting{
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -537,10 +545,15 @@ a.nav-link:hover {
 
   .projects-grid {
     gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .button {
     max-width: 260px;
+  }
+
+  .hero-greeting{
+    text-align: center;
   }
 }
 
