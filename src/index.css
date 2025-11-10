@@ -1,10 +1,14 @@
 @import "./assets/fonts/fonts.css";
 
+/* ================================
+  BASE & VARIÁVEIS
+==================================*/
 /* Zera margens globais */
 html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -23,7 +27,7 @@ body {
 }
 
 /* ================================
-   HEADER
+  HEADER
 ==================================*/
 .site-header {
   display: flex;
@@ -74,7 +78,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   HERO
+  HERO
 ==================================*/
 .hero-container {
   display: flex;
@@ -120,7 +124,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   ABOUT
+  ABOUT
 ==================================*/
 .about-section {
   display: flex;
@@ -133,7 +137,6 @@ a.nav-link:hover {
 }
 
 .container-content {
-  flex: 1;
   max-width: 550px;
   line-height: 1.6;
   text-align: justify;
@@ -157,6 +160,14 @@ a.nav-link:hover {
   padding: 0 1rem;
   max-width: 1200px;
   width: 100%;
+  /* Mantido para alinhar itens ao topo, o que ajuda */
+  align-items: flex-start;
+}
+
+.main-content p {
+  /* Mantido para controle de margem dos parágrafos */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 .about-text {
@@ -170,7 +181,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   SKILLS
+  SKILLS
 ==================================*/
 ::selection {
   color: #0e0e0e;
@@ -251,7 +262,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   PROJECTS
+  PROJECTS
 ==================================*/
 .projects-grid {
   display: grid;
@@ -308,7 +319,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   BUTTON
+  BUTTON
 ==================================*/
 .button {
   width: 100%;
@@ -342,7 +353,7 @@ a.nav-link:hover {
   text-decoration: none;
 }
 /* ================================
-   FOOTER
+  FOOTER
 ==================================*/
 /* Footer ocupa 100% da tela */
 .site-footer {
@@ -364,7 +375,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   MEDIA QUERIES
+  MEDIA QUERIES
 ==================================*/
 @media (max-width: 768px) {
   .site-header {
@@ -396,11 +407,11 @@ a.nav-link:hover {
 
   a.nav-link {
     display: block;
+    font-size: 1.5rem;
     width: 100%;
     margin: 0.5rem auto;
     text-align: center;
-    padding: 10px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 0;
   }
 
   .social-links {
@@ -410,7 +421,10 @@ a.nav-link:hover {
 
   .hero-container {
     flex-direction: column;
+    align-items: center; /* centraliza os itens horizontalmente */
+    justify-content: center; /* opcional, centraliza verticalmente se quiser */
     text-align: center;
+    padding: 2rem 1rem;
   }
 
   .hero-intro {
@@ -420,14 +434,29 @@ a.nav-link:hover {
   .hero-image {
     width: 100%;
   }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
 
   .hero-name {
     text-align: center;
+    font-size: 4rem;
+  }
+  .about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 0 10px;
   }
 
-  .about-section {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+  .container-content {
+    max-width: 768px;
+    line-height: 1.6;
+    text-align: justify;
   }
 
   .section-title {
@@ -451,27 +480,40 @@ a.nav-link:hover {
 }
 
 @media (max-width: 480px) {
-  .main-content {
-    padding: 0 5px;
-  }
+  .main-content,
+  .hero-section,
+  .container-content,
+  .hero-container,
   .hero-image {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .hero-image {
+    max-width: 480px;
+    width: 100%;
     align-items: center;
   }
+
   a.nav-link {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .hero-name {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
-  .hero-greeting,
+  .hero-greeting {
+    font-size: 1.5rem;
+  }
   .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
-  .section-title,
+  .section-title {
+    text-align: center;
+  }
   .main-title {
     text-align: center;
   }
@@ -521,7 +563,8 @@ a.nav-link:hover {
   }
 
   .about-section {
-    grid-template-columns: 1fr 1fr;
+    /* Corrigido para display: flex, pois foi definido assim no início */
+    display: flex;
     gap: 2rem;
   }
 
