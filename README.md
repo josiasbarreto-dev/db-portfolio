@@ -1,111 +1,73 @@
-# 💡 Portfólio DB
+# React + TypeScript + Vite
 
-Este portfólio é um resumo profissional e técnico que serve como vitrine central para minhas **habilidades**, **trajetória** e **projetos** de destaque.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Desenvolvido com uma base sólida em **HTML5** (para estruturação semântica) e **CSS3** (para um design moderno e totalmente responsivo), o projeto garante uma experiência de usuário fluida em qualquer dispositivo. O deploy foi realizado de forma eficiente via **Netlify**, garantindo alta disponibilidade e velocidade de carregamento.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🌐 Acesse o portfólio online
+## React Compiler
 
-Clique aqui para visitar o meu portfólio: [portfoliojosiasbarreto](https://portfoliojosiasbarreto.netlify.app/)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the ESLint configuration
 
-## 🚀 Deploy no Netlify
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-O projeto foi hospedado utilizando a plataforma Netlify que oferece uma forma rápida, prática e moderna de publicar aplicações front-end.
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
----
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-## 🚀 Funcionalidades
-
-Exibição de informações profissionais, currículo e projetos disponíveis no Github.
-
----
-## ✨ Destaques Técnicos
-
-O desenvolvimento deste portfólio priorizou as seguintes boas práticas de Front-end:
-
-* **HTML Semântico:** Uso de elementos como `<header>`, `<main>`, `<section>` e `<footer>` para garantir **acessibilidade (WCAG)** e otimização para motores de busca (**SEO**).
-* **Mobile-First e Flexbox:** O design foi concebido com a abordagem *Mobile-First*, utilizando **Flexbox** para uma distribuição de conteúdo flexível e responsiva em todos os dispositivos.
-* **Codificação Limpa:** O código é conciso, bem comentado e segue uma organização estruturada (separação de CSS, assets, etc.), facilitando a manutenção futura.
-* **Performance:** Por ser puramente HTML e CSS, o projeto garante um tempo de carregamento (TTFB) ultrarrápido.
-
----
-
-## ⚙️ Tecnologias Utilizadas
-
-| Categoria | Tecnologia | Badge |
-| :--- | :--- | :--- |
-| **Linguagem de Marcação** | HTML5 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) |
-| **Folhas de Estilos em Cascata** | CSS3 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) |
-| **Desenvolvimento** | Responsividade | ![Responsividade](https://img.shields.io/badge/Mobile--First-3F51B5?style=flat-square) | 
-| **Versionamento** | Git/GitHub | ![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white) |
-| **Hospedagem** | Netlify | ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white) |
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-DB-PORTFOLIO/
-├── src/
-│   ├── assets/
-│   ├── fonts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-├── index.html
-├── README.md
-
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
----
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## ▶️ Como Executar
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-### Passo a Passo:
-
-1.  **Clone o Repositório:**
-    Abra o terminal e execute o comando abaixo para baixar o código-fonte do projeto.
-
-    ```bash
-    git clone https://github.com/josiasbarreto-dev/db-portfolio.git
-    ```
-
-2.  **Acesse o Diretório do Projeto:**
-    Navegue para a pasta do projeto que foi clonada.
-
-    ```bash
-    cd db-portfolio
-    ```
-
-3.  **Acessar a página:**
-    Busque o arquivo `index.html` na raiz do projeto, clique com o botão direito e escolha a opção abrir no navegador.
-
----
-
-## 📝 Licença
-
-Este projeto está sob a licença **MIT**.
-
----
-
-## 🤝 Contato e Contribuição
-
-### ✍️ Autor Principal
-
-| Nome | GitHub | LinkedIn |
-| :--- | :--- | :--- |
-| **Josias Barreto** | [josiasbarreto-dev](https://github.com/josiasbarreto-dev) | [Josias Barreto](https://www.linkedin.com/in/josiasbarreto-dev/) |
-
-### 💡 Contribuição
-
-Sinta-se à vontade para sugerir melhorias.
-
-1.  Faça o **fork** do projeto.
-2.  Crie uma nova branch (`git checkout -b feature/minha-melhoria`).
-3.  Faça commit das suas alterações (`git commit -m 'feat: Adicionando nova feature'`).
-4.  Faça o push para a branch (`git push origin feature/minha-melhoria`).
-5.  Abra um **Pull Request**.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

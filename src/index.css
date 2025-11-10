@@ -1,36 +1,15 @@
-/* ================================
-   IMPORTS & FONTES
-==================================*/
-@import url("./vendor/normalize.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap");
-
-@font-face {
-  font-family: "TTSupermolot";
-  src: url(../fonts/TT-Supermolot-Bold.woff) format("woff"),
-    url(../fonts/TT-Supermolot-Bold.otf) format("opentype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "TTSupermolot";
-  src: url(../fonts/TT-Supermolot-Regular.woff) format("woff"),
-    url(../fonts/TT\ Supermolot\ Regular.otf) format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
+@import "./assets/fonts/fonts.css";
 
 /* ================================
-   RESET GLOBAL
+  BASE & VARIÁVEIS
 ==================================*/
-* {
-  box-sizing: border-box;
-}
-
-body,
-html {
+/* Zera margens globais */
+html,
+body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 :root {
@@ -48,7 +27,7 @@ html {
 }
 
 /* ================================
-   HEADER
+  HEADER
 ==================================*/
 .site-header {
   display: flex;
@@ -99,7 +78,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   HERO
+  HERO
 ==================================*/
 .hero-container {
   display: flex;
@@ -140,23 +119,25 @@ a.nav-link:hover {
 .hero-description {
   font-family: var(--fonte-ttsupermolot);
   font-weight: 400;
+  color: var(--cor-texto-escuro);
   font-size: 2.25rem;
 }
 
 /* ================================
-   ABOUT
+  ABOUT
 ==================================*/
 .about-section {
-  display: grid;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 60px auto;
   max-width: 1200px;
+  padding: 0 20px;
 }
 
 .container-content {
-  display: block;
-  height: auto;
-  align-items: center;
-  max-width: 700px;
+  max-width: 550px;
   line-height: 1.6;
   text-align: justify;
 }
@@ -179,6 +160,14 @@ a.nav-link:hover {
   padding: 0 1rem;
   max-width: 1200px;
   width: 100%;
+  /* Mantido para alinhar itens ao topo, o que ajuda */
+  align-items: flex-start;
+}
+
+.main-content p {
+  /* Mantido para controle de margem dos parágrafos */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 .about-text {
@@ -192,7 +181,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   SKILLS
+  SKILLS
 ==================================*/
 ::selection {
   color: #0e0e0e;
@@ -200,10 +189,10 @@ a.nav-link:hover {
 }
 
 .skills-card {
-  width: 100%;
-  max-width: 550px;
+  flex: 1;
+  max-width: 500px;
   background-color: #ffffff;
-  padding: 30px 40px;
+  padding: 10px 30px;
 }
 
 .skill-item {
@@ -211,7 +200,7 @@ a.nav-link:hover {
   font-family: var(--fonte-roboto-flex);
   font-size: 1rem;
   color: var(--cor-texto-escuro);
-  align-items: center;
+  align-items: left;
   padding: 10px 0;
 }
 .main-title {
@@ -238,6 +227,7 @@ a.nav-link:hover {
   color: #292929;
   width: 35%;
   min-width: 120px;
+  text-align: left;
 }
 
 .progress-bar {
@@ -272,7 +262,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   PROJECTS
+  PROJECTS
 ==================================*/
 .projects-grid {
   display: grid;
@@ -329,7 +319,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   BUTTON
+  BUTTON
 ==================================*/
 .button {
   width: 100%;
@@ -362,14 +352,17 @@ a.nav-link:hover {
   color: #ffffff;
   text-decoration: none;
 }
-
 /* ================================
-   FOOTER
+  FOOTER
 ==================================*/
+/* Footer ocupa 100% da tela */
 .site-footer {
-  max-width: 100%;
-  background-color: var(--cor-principal);
-  padding: 15px;
+  width: 100%;
+  background-color: #85d4f4;
+  padding: 1rem 0;
+}
+
+.footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,7 +375,7 @@ a.nav-link:hover {
 }
 
 /* ================================
-   MEDIA QUERIES
+  MEDIA QUERIES
 ==================================*/
 @media (max-width: 768px) {
   .site-header {
@@ -414,11 +407,11 @@ a.nav-link:hover {
 
   a.nav-link {
     display: block;
+    font-size: 1.5rem;
     width: 100%;
     margin: 0.5rem auto;
     text-align: center;
-    padding: 10px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 0;
   }
 
   .social-links {
@@ -428,7 +421,10 @@ a.nav-link:hover {
 
   .hero-container {
     flex-direction: column;
+    align-items: center; /* centraliza os itens horizontalmente */
+    justify-content: center; /* opcional, centraliza verticalmente se quiser */
     text-align: center;
+    padding: 2rem 1rem;
   }
 
   .hero-intro {
@@ -438,14 +434,29 @@ a.nav-link:hover {
   .hero-image {
     width: 100%;
   }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
 
   .hero-name {
     text-align: center;
+    font-size: 4rem;
+  }
+  .about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 0 10px;
   }
 
-  .about-section {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+  .container-content {
+    max-width: 768px;
+    line-height: 1.6;
+    text-align: justify;
   }
 
   .section-title {
@@ -463,33 +474,46 @@ a.nav-link:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-greeting{
+  .hero-greeting {
     text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .main-content {
-    padding: 0 5px;
+  .main-content,
+  .hero-section,
+  .container-content,
+  .hero-container,
+  .hero-image {
+    padding: 0px;
+    margin: 0px;
   }
-  .hero-image{
+
+  .hero-image {
+    max-width: 480px;
+    width: 100%;
     align-items: center;
   }
+
   a.nav-link {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .hero-name {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
-  .hero-greeting,
+  .hero-greeting {
+    font-size: 1.5rem;
+  }
   .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
-  .section-title,
+  .section-title {
+    text-align: center;
+  }
   .main-title {
     text-align: center;
   }
@@ -539,21 +563,18 @@ a.nav-link:hover {
   }
 
   .about-section {
-    grid-template-columns: 1fr 1fr;
+    /* Corrigido para display: flex, pois foi definido assim no início */
+    display: flex;
     gap: 2rem;
   }
 
   .projects-grid {
     gap: 30px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .button {
     max-width: 260px;
-  }
-
-  .hero-greeting{
-    text-align: center;
   }
 }
 
